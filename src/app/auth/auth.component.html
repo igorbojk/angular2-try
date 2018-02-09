@@ -1,0 +1,13 @@
+<div *ngIf="!user">
+  <a (click)="signInWithGoogle()" >google</a>
+  <a (click)="signInWithFB()" >fb</a>
+</div>
+<a (click)="signOut()"  *ngIf="user">signOut</a>
+<div *ngIf="user">
+  <img src="{{ user.photoUrl }}">
+  <div>
+    <h4>{{ user.name }}</h4>
+    <p>{{ user.email }}</p>
+  </div>
+</div>
+
