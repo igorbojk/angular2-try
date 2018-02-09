@@ -15,7 +15,7 @@ import {AuthComponent} from './auth/auth.component';
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('161969267472-kndk9pro9qtjgqdfh0409gt1tvatsoos.apps.googleusercontent.com')
+    provider: new GoogleLoginProvider('235249930835-6njnc8lrl2r7ll2p7gn38fv50vjakorn.apps.googleusercontent.com')
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
