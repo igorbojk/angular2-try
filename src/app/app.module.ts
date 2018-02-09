@@ -6,11 +6,13 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angular4-social-login';
+import { RoutesModule } from './routes.module';
 
 
 import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {AuthComponent} from './auth/auth.component';
+import { MainComponent } from './main/main.component';
 
 const config = new AuthServiceConfig([
   {
@@ -32,11 +34,13 @@ export function provideConfig() {
   declarations: [
     AppComponent,
     NavbarComponent,
-    AuthComponent
+    AuthComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
-    SocialLoginModule
+    SocialLoginModule,
+    RoutesModule
   ],
   providers: [
     {

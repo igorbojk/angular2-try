@@ -1,0 +1,11 @@
+.user-avatar{
+  height: 40px;
+  width: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.user-avatar:hover{
+  cursor: pointer;
+}
