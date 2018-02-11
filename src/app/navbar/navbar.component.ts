@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService, SocialUser} from 'angular4-social-login';
+import {UserService} from '../user.service';
+import {AuthService} from 'angular4-social-login';
+import { StateService } from '@uirouter/angular';
+
 
 @Component({
   selector: 'app-navbar',
@@ -8,28 +11,31 @@ import {AuthService, SocialUser} from 'angular4-social-login';
 })
 export class NavbarComponent implements OnInit {
 
-  public user: SocialUser;
-  public style: object;
-
-  constructor(private authService: AuthService) {
+  constructor(
+    public userService: UserService,
+    private authService: AuthService,
+    public stateService: StateService) {
   }
 
   ngOnInit() {
-    this.authService.authState.subscribe(
-      (user) => {
-        this.user = user;
-        if (this.user) {
-          this.generateUserAvatarUrl();
-        }
-      }
-    );
+  }
+
+  get user() {
+    return this.userService.currentUser;
   }
 
 
-  generateUserAvatarUrl() {
-    this.style = {
-      backgroundImage: `url(${this.user.photoUrl}`
-    };
+  get userAvatar() {
+    return {backgroundImage: `url(${this.user.photoUrl}`}
+  }
+
+  signOut(): void {
+    this.authService.signOut().then(
+        () => {
+          this.userService.setCurrentUser(null);
+          this.stateService.go('login');
+        }
+      )
   }
 
 }

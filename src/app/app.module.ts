@@ -8,6 +8,7 @@ import {
 } from 'angular4-social-login';
 import { RoutesModule } from './routes.module';
 
+import {UserService} from './user.service';
 
 import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
@@ -46,7 +47,8 @@ export function provideConfig() {
     {
       provide: AuthServiceConfig,
       useFactory: provideConfig
-    }
+    },
+    UserService,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,13 +1,19 @@
-<div *ngIf="!user">
+<!-- <div *ngIf="!currentUser">
   <a (click)="signInWithGoogle()" >google</a>
   <a (click)="signInWithFB()" >fb</a>
 </div>
-<a (click)="signOut()"  *ngIf="user">signOut</a>
-<div *ngIf="user">
-  <img src="{{ user.photoUrl }}">
+<a (click)="signOut()"  *ngIf="currentUser">signOut</a>
+<div *ngIf="currentUser">
+  <img src="{{ currentUser.photoUrl }}">
   <div>
-    <h4>{{ user.name }}</h4>
-    <p>{{ user.email }}</p>
+    <h4>{{ currentUser.name }}</h4>
+    <p>{{ currentUser.email }}</p>
   </div>
-</div>
+</div> -->
 
+<div class="login-container">
+	<div class="login-wrap">
+		<a  (click)="signInWithGoogle()" class="login-btn">G</a>
+		<a (click)="signInWithFB()" class="login-btn">F</a>
+	</div>
+</div>

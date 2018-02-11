@@ -19,7 +19,7 @@ const routes = [
 @NgModule({
   imports: [
     UIRouterModule.forRoot({
-      otherwise: {state: 'home'},
+      otherwise: {state: 'login'},
       states: routes,
       useHash: true
     }),
