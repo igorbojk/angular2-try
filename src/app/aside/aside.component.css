@@ -14,3 +14,15 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+.app-aside .user-info{
+  padding: 8px;
+}
+.app-aside .user-info .user-name{
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.app-aside .user-info .user-email{
+  font-size: 15px;
+  color: rgba(0,0,0,0.5)
+}

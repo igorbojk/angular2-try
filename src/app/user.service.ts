@@ -17,7 +17,7 @@ export class UserService {
   setCurrentUser(user) {
     this.currentUser = user;
     this.localSt.store('storageUser', user);
-    this.stateService.go('home');
+    this.stateService.go('main.home');
   }
 
   signInWithGoogle() {
@@ -37,6 +37,7 @@ export class UserService {
       () => {
         this.setCurrentUser(null);
         this.localSt.clear('storageUser');
+        console.log(window.localStorage);
         this.stateService.go('login');
       }
     );

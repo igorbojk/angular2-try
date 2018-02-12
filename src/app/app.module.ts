@@ -17,6 +17,8 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {AuthComponent} from './auth/auth.component';
 import { MainComponent } from './main/main.component';
 import { AsideComponent } from './aside/aside.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 const config = new AuthServiceConfig([
   {
@@ -44,7 +46,9 @@ export function provideConfig() {
     NavbarComponent,
     AuthComponent,
     MainComponent,
-    AsideComponent
+    AsideComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

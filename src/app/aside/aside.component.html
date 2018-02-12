@@ -1,9 +1,11 @@
 
-<div class="app-aside">
-  <div class="user-avatar"  *ngIf="currentUser" [ngStyle]="userAvatar">
 
+<div class="app-aside" *ngIf="currentUser">
+    <div class="user-avatar" [ngStyle]="userAvatar">
+
+    </div>
+    <div class="user-info">
+    <p class="user-name">{{currentUser.name}}</p>
+    <p class="user-email">{{currentUser.email}}</p>
   </div>
-  <p>
-    aside works!
-  </p>
 </div>
