@@ -1,7 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { UIRouterModule} from '@uirouter/angular';
 import { AuthComponent } from './auth/auth.component';
 import { MainComponent } from './main/main.component';
+
+
+// import { MainGuard } from ' main.guard ';
 
 const routes = [
   {
@@ -16,6 +19,9 @@ const routes = [
   }
 ]
 
+
+
+
 @NgModule({
   imports: [
     UIRouterModule.forRoot({
@@ -26,4 +32,7 @@ const routes = [
   ],
   exports: [ UIRouterModule ]
 })
-export class RoutesModule { }
+export class RoutesModule {
+}
+
+

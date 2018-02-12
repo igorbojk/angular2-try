@@ -11,6 +11,7 @@ export class AuthComponent implements OnInit {
 
   private loggedIn: boolean;
 
+
   constructor(public userService: UserService) {
   }
 
@@ -18,15 +19,30 @@ export class AuthComponent implements OnInit {
   }
 
   signInWithGoogle(): void {
-    this.userService.signInWithGoogle();
+    this.userService.signInWithGoogle()
+      .then(
+        (user) => {
+          this.userService.setCurrentUser(user);
+        }
+      );
   }
 
   signInWithFB(): void {
-    this.userService.signInWithFB();
+    this.userService.signInWithFB()
+      .then(
+        (user) => {
+          this.userService.setCurrentUser(user);
+        }
+      );
   }
 
   signInWithLinkedIN(): void {
-    this.userService.signInWithLinkedIN();
+    this.userService.signInWithLinkedIN()
+      .then(
+        (user) => {
+          this.userService.setCurrentUser(user);
+        }
+      );
   }
 
   signOut(): void {
@@ -35,3 +51,4 @@ export class AuthComponent implements OnInit {
 
 
 }
+

@@ -11,10 +11,7 @@
 
     </ul>
     <div class="nav-item">
-      <a class="nav-link text-white" uiSref="login" *ngIf="!user">Login</a>
-      <div class="user-avatar" uiSref="login" *ngIf="user" [ngStyle]="userAvatar" (click)="signOut()">
-
-      </div>
+      <a class="nav-link text-white" uiSref="login" *ngIf="user">Logout</a>
     </div>
 
   </div>

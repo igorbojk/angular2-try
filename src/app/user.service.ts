@@ -20,28 +20,16 @@ export class UserService {
     this.stateService.go('home');
   }
 
-  signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
-      (user) => {
-        this.setCurrentUser(user);
-      }
-    );
+  signInWithGoogle() {
+    return this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
-  signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(
-      (user) => {
-        this.setCurrentUser(user);
-      }
-    );
+  signInWithFB() {
+    return this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
-  signInWithLinkedIN(): void {
-    this.authService.signIn(LinkedinLoginProvider.PROVIDER_ID).then(
-      (user) => {
-        this.setCurrentUser(user);
-      }
-    );
+  signInWithLinkedIN() {
+    return this.authService.signIn(LinkedinLoginProvider.PROVIDER_ID);
   }
 
   signOut(): void {

@@ -1,0 +1,5 @@
+export enum VIEW_STATES {
+  LOADING = 'LOADING',
+  RESULT = 'RESULT',
+  EMPTY_STATE = 'EMPTY_STATE',
+}

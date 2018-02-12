@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     public userService: UserService,
-    public stateService: StateService) {
+) {
   }
 
   ngOnInit() {
@@ -22,10 +22,6 @@ export class NavbarComponent implements OnInit {
     return this.userService.currentUser;
   }
 
-
-  get userAvatar() {
-    return {backgroundImage: `url(${this.user.photoUrl}`};
-  }
 
   signOut(): void {
     this.userService.signOut();
