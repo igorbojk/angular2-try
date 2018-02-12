@@ -8,6 +8,7 @@ import {
   LinkedinLoginProvider
 } from 'ng4-social-login';
 import { RoutesModule } from './routes.module';
+import { Ng2Webstorage } from 'ngx-webstorage';
 
 import {UserService} from './user.service';
 
@@ -15,6 +16,7 @@ import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {AuthComponent} from './auth/auth.component';
 import { MainComponent } from './main/main.component';
+import { AsideComponent } from './aside/aside.component';
 
 const config = new AuthServiceConfig([
   {
@@ -41,12 +43,14 @@ export function provideConfig() {
     AppComponent,
     NavbarComponent,
     AuthComponent,
-    MainComponent
+    MainComponent,
+    AsideComponent
   ],
   imports: [
     BrowserModule,
     SocialLoginModule,
-    RoutesModule
+    RoutesModule,
+    Ng2Webstorage
   ],
   providers: [
     {

@@ -1,0 +1,16 @@
+.app-aside{
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  width: 210px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  background: white;
+}
+.app-aside .user-avatar{
+  width: 100%;
+  height: 210px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
