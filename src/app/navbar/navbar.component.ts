@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../user.service';
-import {AuthService} from 'angular4-social-login';
+import {AuthService} from 'ng4-social-login';
 import { StateService } from '@uirouter/angular';
 
 

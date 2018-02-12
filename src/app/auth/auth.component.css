@@ -15,20 +15,15 @@
 	box-shadow: 0 2px 2px rgba(0,0,0,0.5);
 }
 .login-btn{
-	border-radius: 50%;
-	width: 48px;
-	height: 48px;
-	color: black;
-	font-weight: 600;
-	margin: 24px;
-	background: pink;
-	display: inline-block;
-	text-align: center;
-	line-height: 48px;
-	text-decoration: none !important;
+  margin-bottom: 8px;
+  min-width: 156px;
 }
-
-.login-btn:hover{
-	background: red;
-	cursor: pointer;
+.login-btn:last-child{
+  margin-bottom: 0;
+}
+.login-btn button{
+  width: 100%;
+}
+.login-btn button:focus{
+  box-shadow: none;
 }

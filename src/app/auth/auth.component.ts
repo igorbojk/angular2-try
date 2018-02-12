@@ -1,9 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService, SocialUser} from 'angular4-social-login';
-import {FacebookLoginProvider, GoogleLoginProvider} from 'angular4-social-login';
+import {
+  AuthService,
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+  LinkedinLoginProvider
+} from 'ng4-social-login';
 import {UserService} from '../user.service';
-import { StateService } from '@uirouter/angular';
- 
+import {StateService} from '@uirouter/angular';
+
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -13,11 +17,9 @@ export class AuthComponent implements OnInit {
 
   private loggedIn: boolean;
 
-  constructor(
-    private authService: AuthService,
-    public userService: UserService,
-    public stateService: StateService
-    ) {
+  constructor(private authService: AuthService,
+              public userService: UserService,
+              public stateService: StateService) {
   }
 
   ngOnInit() {
@@ -34,38 +36,49 @@ export class AuthComponent implements OnInit {
     // );
   }
 
-  get currentUser(){
+  get currentUser() {
     return this.userService.currentUser;
   }
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
-        (user) => {
-          this.userService.setCurrentUser(user);
-          this.stateService.go('home');
-          console.log( user);
-              
-        }
-      )
+      (user) => {
+        this.userService.setCurrentUser(user);
+        this.stateService.go('home');
+        console.log(user);
+
+      }
+    );
   }
 
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(
-        (user) => {
-          this.userService.setCurrentUser(user);
-          this.stateService.go('home');
-          console.log( user);
-              
-        }
-      )
+      (user) => {
+        this.userService.setCurrentUser(user);
+        this.stateService.go('home');
+        console.log(user);
+
+      }
+    );
+  }
+
+  signInWithLinkedIN(): void {
+    this.authService.signIn(LinkedinLoginProvider.PROVIDER_ID).then(
+      (user) => {
+        this.userService.setCurrentUser(user);
+        this.stateService.go('home');
+        console.log(user);
+
+      }
+    );
   }
 
   signOut(): void {
     this.authService.signOut().then(
-        () => {
-          this.userService.setCurrentUser(null);
-          this.stateService.go('login');
-        }
-      )
+      () => {
+        this.userService.setCurrentUser(null);
+        this.stateService.go('login');
+      }
+    );
   }
 }

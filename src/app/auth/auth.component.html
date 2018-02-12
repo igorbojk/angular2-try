@@ -13,7 +13,14 @@
 
 <div class="login-container">
 	<div class="login-wrap">
-		<a  (click)="signInWithGoogle()" class="login-btn">G</a>
-		<a (click)="signInWithFB()" class="login-btn">F</a>
-	</div>
+    <div class="login-btn">
+      <button type="button" class="btn btn-outline-danger" (click)="signInWithGoogle()">Google</button>
+    </div>
+    <div class="login-btn">
+      <button type="button" class="btn btn-outline-primary" (click)="signInWithFB()">Facebook</button>
+    </div>
+    <div class="login-btn">
+      <button type="button" class="btn btn-outline-info" (click)="signInWithLinkedIN()">Linkedin</button>
+    </div>
+  </div>
 </div>
